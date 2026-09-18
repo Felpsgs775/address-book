@@ -1,5 +1,16 @@
 package br.edu.utfpr.tsi.address.control;
 
-public class PersonController {
+import java.time.LocalDate;
+
+public class PersonController 
+{
+	public void createPerson(String firstName, 
+			                 String lastName, 
+			                 LocalDate birthDate,
+			                 String email, 
+			                 String phone)
+	{
+		
+	}
 
 }
