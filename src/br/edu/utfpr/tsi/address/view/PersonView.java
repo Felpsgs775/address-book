@@ -1,6 +1,7 @@
 package br.edu.utfpr.tsi.address.view;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 import br.edu.utfpr.tsi.address.control.PersonController;
 
@@ -15,6 +16,26 @@ public class PersonView
 		this.controller = controller;
 	}
 	
+	private LocalDate readValidBirthDate()
+	{
+		String errorMessage = "Data inválida! Por favor tente novamente. ";
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		while(true)
+		{
+			try
+			{
+				System.out.print("Data de Nascimento");
+				String dateInput = scanner.nextLine();
+				
+				return LocalDate.parse(dateInput, formatter);
+			}
+			catch(DateTimeParseException e)
+			{
+				System.out.println(errorMessage);
+			}
+		}
+	}
+	
 	public void createPerson()
 	{
 		System.out.print("Nome: ");
@@ -23,10 +44,7 @@ public class PersonView
 		System.out.print("Sobrenome: ");
 		String lastName = scanner.nextLine();
 		
-		System.out.println("Data de Nascimento (dd/mm/aaaa): ");
-		String input = scanner.nextLine();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		LocalDate birthDate = LocalDate.parse(input, formatter);
+		LocalDate birthDate = readValidBirthDate();
 		
 		System.out.println("Email: ");
 		String email = scanner.nextLine();

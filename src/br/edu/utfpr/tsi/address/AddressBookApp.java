@@ -21,9 +21,9 @@ public class AddressBookApp
 	
 	private void showWelcomeMessage()
 	{
-		System.out.print("===========================\n"
+		System.out.print("===============================\n"
 				+ "Address Book Aplication - UTFPR/TSI\n"
-				+        "===========================\n");
+				+        "===============================\n");
 	}
 	
 	private void showGoodbyeMessage()
