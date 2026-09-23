@@ -1,5 +1,5 @@
 package br.edu.utfpr.tsi.address.control;
-import br.edu.utfpr.tsi.address.model.*;
+import br.edu.utfpr.tsi.address.model.Person;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ public class PersonController
 	List<Person> personList = new ArrayList<>();
 
 	
-	public void createPerson(String firstName, 
+	public void registerPerson(String firstName, 
 			                 String lastName, 
 			                 LocalDate birthDate,
 			                 String email, 

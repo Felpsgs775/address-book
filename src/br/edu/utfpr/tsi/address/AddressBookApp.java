@@ -31,8 +31,6 @@ public class AddressBookApp
 		System.out.println("E N D");
 	}
 	
-	
-	
 	public void run()
 	{
 		showWelcomeMessage();

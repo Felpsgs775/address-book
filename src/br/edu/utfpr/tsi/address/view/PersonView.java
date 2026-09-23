@@ -16,6 +16,12 @@ public class PersonView
 		this.controller = controller;
 	}
 	
+	private String readText(String prompt)
+	{
+		System.out.println(prompt);
+		return scanner.nextLine().trim();
+	}
+	
 	private LocalDate readValidBirthDate()
 	{
 		String errorMessage = "Data inválida! Por favor tente novamente. ";
@@ -36,23 +42,18 @@ public class PersonView
 		}
 	}
 	
-	public void createPerson()
+	public void registerPerson()
 	{
-		System.out.print("Nome: ");
-		String firstName = scanner.nextLine();
 		
-		System.out.print("Sobrenome: ");
-		String lastName = scanner.nextLine();
+		String firstName = readText("Nome: ");
+		String lastName = readText("Sobrenome: ");
 		
 		LocalDate birthDate = readValidBirthDate();
 		
-		System.out.println("Email: ");
-		String email = scanner.nextLine();
+		String email = readText("email: ");
+		String phone = readText("Telefone: ");
 		
-		System.out.println("Telefone");
-		String phone = scanner.nextLine();
-		
-		controller.createPerson(firstName, lastName, birthDate, email, phone);
+		controller.registerPerson(firstName, lastName, birthDate, email, phone);
       }
 	
 	private boolean shouldContinue(String message)
@@ -67,7 +68,7 @@ public class PersonView
 		System.out.println("-- Cadastro de Pessoas--");
 		do
 		{
-			createPerson();
+			registerPerson();
 		}
 		while(shouldContinue("Deseja cadastrar outra pessoa? (S/N)"));
 			
