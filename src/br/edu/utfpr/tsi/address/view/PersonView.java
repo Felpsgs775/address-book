@@ -8,11 +8,13 @@ public class PersonView
 {
 	private Scanner scanner;
 	private PersonController controller = null;
+	
 	public PersonView(Scanner scanner, PersonController controller)
 	{
 		this.scanner = scanner;
 		this.controller = controller;
 	}
+	
 	public void createPerson()
 	{
 		System.out.print("Nome: ");
