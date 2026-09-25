@@ -14,7 +14,20 @@ public class PersonView
 		this.controller = controller;
 	}
 	
-	
+	public void showPerson(String firstName,
+			               String lastName, 
+			               LocalDate birthDate, 
+			               String email, 
+			               String phone)
+	{
+
+	    System.out.println("-- Dados da Pessoa --");
+	    System.out.println("Nome: " + firstName + " " + lastName);
+	    System.out.println("Data de nascimento: " + birthDate);
+	    System.out.println("Email: " + email);
+	    System.out.println("Telefone: " + phone);
+		
+	}
 	
 	public void registerPerson()
 	{
